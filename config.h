@@ -7,17 +7,17 @@
 #define MATRIX_COLS 5
 
 #define DIRECT_PINS { \
-    { GP13, GP28, GP12, GP29, GP0 }, \
-    { GP22, GP14, GP26, GP4,  GP27}, \
-    { GP21, GP23, GP7, GP20, GP6 }, \
-    { GP16, GP9, GP8, NO_PIN, NO_PIN } \
+    { GP13, GP28, GP12,   GP29,    GP0 }, \
+    { GP22, GP14, GP26,    GP4,   GP27 }, \
+    { GP21, GP23,  GP7,   GP20,    GP6 }, \
+    { GP16,  GP9,  GP8, NO_PIN, NO_PIN } \
 }
 
 #define DIRECT_PINS_RIGHT {  \
-    { GP0, GP29, GP12, GP28, GP13 }, \
-    { GP27, GP4, GP26, GP14, GP22}, \
-    { GP6, GP20, GP7, GP23, GP21 }, \
-    { GP8, GP9, GP16, NO_PIN, NO_PIN } \
+    {  GP0, GP29, GP12,   GP28,   GP13 }, \
+    { GP27,  GP4, GP26,   GP14,   GP22 }, \
+    {  GP6, GP20,  GP7,   GP23,   GP21 }, \
+    {  GP8,  GP9, GP16, NO_PIN, NO_PIN } \
 }
 
 
