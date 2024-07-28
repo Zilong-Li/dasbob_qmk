@@ -49,7 +49,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             KC_NO,          KC_NO,        KC_NO,        KC_NO,        KC_NO,             RGB_TOG,      RGB_MOD,      RGB_HUI,        RGB_SAI,      RGB_SPI,
             KC_LGUI,        KC_LALT,      KC_LCTL,      KC_LSFT,      KC_NO,             RGB_VAI,      KC_MPRV,      KC_VOLD,        KC_VOLU,      KC_MNXT,
             KC_RALT,        KC_NO,        KC_NO,        KC_NO,        KC_NO,             KC_NO,        KC_NO,        KC_BRID,        KC_BRIU,      KC_NO,
-                                          KC_NO,        KC_NO,        KC_NO,             KC_MUTE,      KC_MSTP,      KC_MPLY
+                                          KC_NO,        KC_NO,        KC_NO,             KC_MSTP,      KC_MPLY,      KC_MUTE
     ),
 
     [NAVIGATION] = LAYOUT_split_3x5_3(
