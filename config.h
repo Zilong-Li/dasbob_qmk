@@ -67,3 +67,7 @@
 #endif
 
 #define STARTUP_SOUND E__NOTE(_E6), E__NOTE(_A6), ED_NOTE(_E7),
+
+// combos
+#define COMBO_TERM 50
+
