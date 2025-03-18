@@ -3,17 +3,20 @@
 enum combos {
   WE_SQUO,
   WR_DQUO,
-  UI_ESC,
+  UI_CTRS,
+  UNDERSC,
 };
 
 const uint16_t PROGMEM we_combo[] = {KC_W, KC_E, COMBO_END};
 const uint16_t PROGMEM wr_combo[] = {KC_W, KC_R, COMBO_END};
 const uint16_t PROGMEM ui_combo[] = {KC_U, KC_I, COMBO_END};
+const uint16_t PROGMEM uo_combo[] = {KC_U, KC_O, COMBO_END};
 
 combo_t key_combos[] = {
   [WE_SQUO] = COMBO(we_combo, KC_QUOTE),
   [WR_DQUO] = COMBO(wr_combo, LSFT(KC_QUOTE)),
-  [UI_ESC] = COMBO(ui_combo, KC_ESC),
+  [UI_CTRS] = COMBO(ui_combo, LCTL(KC_S)),
+  [UNDERSC] = COMBO(uo_combo, LSFT(KC_MINUS)),
 };
 
 enum dasbob_layers {
@@ -76,7 +79,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [MOUSE] = LAYOUT_split_3x5_3(
-            KC_NO,          KC_NO,        KC_NO,        KC_NO,        KC_NO,             KC_AGIN,      KC_PSTE,      KC_COPY,        KC_CUT,       KC_UNDO,
+            KC_NO,          KC_NO,        KC_NO,        KC_NO,        KC_NO,             LGUI(KC_S),   LGUI(KC_V),   LGUI(KC_C),     LGUI(KC_X),   LGUI(KC_Z),
             KC_NO,          KC_LALT,      KC_LCTL,      KC_LSFT,      KC_LGUI,           KC_MS_L,      KC_MS_D,      KC_MS_U,        KC_MS_R,      KC_NO, 
             KC_RALT,        KC_NO,        KC_NO,        KC_NO,        KC_NO,             KC_WH_L,      KC_WH_D,      KC_WH_U,        KC_WH_R,      KC_NO,  
                                           KC_NO,        KC_NO,        KC_NO,             KC_BTN2,      KC_BTN1,      KC_BTN3
