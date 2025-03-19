@@ -1,18 +1,21 @@
 #include QMK_KEYBOARD_H
 
 enum combos {
+  ER_COPY,
   WE_SQUO,
   WR_DQUO,
   UI_CTRS,
   UNDERSC,
 };
 
+const uint16_t PROGMEM er_combo[] = {KC_E, KC_R, COMBO_END};
 const uint16_t PROGMEM we_combo[] = {KC_W, KC_E, COMBO_END};
 const uint16_t PROGMEM wr_combo[] = {KC_W, KC_R, COMBO_END};
 const uint16_t PROGMEM ui_combo[] = {KC_U, KC_I, COMBO_END};
 const uint16_t PROGMEM uo_combo[] = {KC_U, KC_O, COMBO_END};
 
 combo_t key_combos[] = {
+  [ER_COPY] = COMBO(er_combo, LCTL(KC_C)),
   [WE_SQUO] = COMBO(we_combo, KC_QUOTE),
   [WR_DQUO] = COMBO(wr_combo, LSFT(KC_QUOTE)),
   [UI_CTRS] = COMBO(ui_combo, LCTL(KC_S)),
