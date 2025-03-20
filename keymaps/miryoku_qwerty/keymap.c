@@ -1,25 +1,21 @@
 #include QMK_KEYBOARD_H
 
 enum combos {
-  ER_COPY,
-  WE_SQUO,
-  WR_DQUO,
+  ER_UNDO,
+  WE_COPY,
   UI_CTRS,
-  UNDERSC,
 };
 
 const uint16_t PROGMEM er_combo[] = {KC_E, KC_R, COMBO_END};
 const uint16_t PROGMEM we_combo[] = {KC_W, KC_E, COMBO_END};
-const uint16_t PROGMEM wr_combo[] = {KC_W, KC_R, COMBO_END};
+const uint16_t PROGMEM qw_combo[] = {KC_Q, KC_W, COMBO_END};
 const uint16_t PROGMEM ui_combo[] = {KC_U, KC_I, COMBO_END};
-const uint16_t PROGMEM uo_combo[] = {KC_U, KC_O, COMBO_END};
+const uint16_t PROGMEM io_combo[] = {KC_I, KC_O, COMBO_END};
 
 combo_t key_combos[] = {
-  [ER_COPY] = COMBO(er_combo, LCTL(KC_C)),
-  [WE_SQUO] = COMBO(we_combo, KC_QUOTE),
-  [WR_DQUO] = COMBO(wr_combo, LSFT(KC_QUOTE)),
+  [ER_UNDO] = COMBO(er_combo, LCTL(KC_Z)),
+  [WE_COPY] = COMBO(we_combo, LCTL(KC_C)),
   [UI_CTRS] = COMBO(ui_combo, LCTL(KC_S)),
-  [UNDERSC] = COMBO(uo_combo, LSFT(KC_MINUS)),
 };
 
 enum dasbob_layers {
@@ -90,8 +86,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     // and the following three are from the right thumb
     [SYMBOLS] = LAYOUT_split_3x5_3(
-            KC_LCBR,        LSFT(KC_7),   LSFT(KC_8),   LSFT(KC_9),   KC_RCBR,           KC_NO,        KC_NO,        KC_NO,          KC_NO,        KC_NO,
-            LSFT(KC_QUOTE), LSFT(KC_4),   LSFT(KC_5),   LSFT(KC_6),   LSFT(KC_EQL),      KC_LGUI,      KC_LSFT,      KC_LCTL,        KC_LALT,      KC_NO,
+            LSFT(KC_QUOTE), LSFT(KC_7),   LSFT(KC_8),   KC_LCBR,      KC_RCBR,           KC_NO,        KC_NO,        KC_NO,          KC_NO,        KC_NO,
+            KC_QUOTE,       LSFT(KC_4),   LSFT(KC_5),   LSFT(KC_6),   LSFT(KC_EQL),      KC_LGUI,      KC_LSFT,      KC_LCTL,        KC_LALT,      KC_NO,
             LSFT(KC_GRAVE), LSFT(KC_1),   LSFT(KC_2),   LSFT(KC_3),   LSFT(KC_BSLS),     KC_NO,        KC_NO,        LSFT(KC_COMMA), LSFT(KC_DOT), KC_RALT,
                                           LSFT(KC_9),   LSFT(KC_0),   LSFT(KC_MINUS),    KC_NO,        KC_NO,        KC_NO
     ),
