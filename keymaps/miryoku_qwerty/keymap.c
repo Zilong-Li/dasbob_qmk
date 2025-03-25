@@ -65,7 +65,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // the following three layers are related to the left thumb
     [MEDIA] = LAYOUT_split_3x5_3(
             KC_NO,          KC_NO,        KC_NO,        KC_NO,        KC_NO,             RGB_TOG,      RGB_MOD,      RGB_HUI,        RGB_SAI,      RGB_SPI,
-            KC_NO,          KC_LALT,      KC_LCTL,      KC_LSFT,      KC_LGUI,           RGB_VAI,      KC_MPRV,      KC_VOLD,        KC_VOLU,      KC_MNXT,
+            KC_NO,          KC_LALT,      KC_LCTL,      KC_LSFT,      KC_LGUI,           RGB_VAI,      KC_VOLD,      KC_VOLU,        KC_MPRV,      KC_MNXT,
             KC_RALT,        KC_NO,        KC_NO,        KC_NO,        KC_NO,             KC_NO,        KC_NO,        KC_BRID,        KC_BRIU,      KC_NO,
                                           KC_NO,        KC_NO,        KC_NO,             KC_MSTP,      KC_MPLY,      KC_MUTE
     ),
@@ -95,7 +95,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [NUMBERS] = LAYOUT_split_3x5_3(
             KC_LBRC,        KC_7,         KC_8,         KC_9,         KC_GRAVE,          KC_NO,        KC_NO,        KC_NO,          KC_NO,        KC_NO,
             KC_RBRC,        KC_4,         KC_5,         KC_6,         KC_EQUAL,          KC_LGUI,      KC_LSFT,      KC_LCTL,        KC_LALT,      KC_NO,
-            KC_GRAVE,       KC_1,         KC_2,         KC_3,         KC_BSLS,           KC_NO,        KC_NO,        KC_COMMA,       KC_DOT,       KC_RALT,
+     LGUI(KC_GRAVE),       KC_1,         KC_2,         KC_3,         KC_BSLS,           KC_NO,        KC_NO,        KC_COMMA,       KC_DOT,       KC_RALT,
                                           KC_DOT,       KC_0,         KC_MINUS,          KC_NO,        KC_NO,        KC_NO
     ),
 
