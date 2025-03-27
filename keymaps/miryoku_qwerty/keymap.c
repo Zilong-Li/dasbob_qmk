@@ -1,5 +1,22 @@
 #include QMK_KEYBOARD_H
 
+enum dasbob_layers {
+  BASE,
+  MEDIA,
+  NAVIGATION,
+  MOUSE,
+  SYMBOLS,
+  NUMBERS,
+  FUNCTIONS
+};
+
+#define ESC_MED LT(MEDIA, KC_ESC)
+#define SPC_NAV LT(NAVIGATION, KC_SPC)
+#define TAB_CUR LT(MOUSE, KC_TAB)
+#define ENT_SYM LT(SYMBOLS, KC_ENT)
+#define BSP_NUM LT(NUMBERS, KC_BSPC)
+#define DEL_FUN LT(FUNCTIONS, KC_DEL)
+
 enum combos {
   ER_UNDO,
   WE_COPY,
@@ -18,22 +35,14 @@ combo_t key_combos[] = {
   [UI_CTRS] = COMBO(ui_combo, LCTL(KC_S)),
 };
 
-enum dasbob_layers {
-  BASE,
-  MEDIA,
-  NAVIGATION,
-  MOUSE,
-  SYMBOLS,
-  NUMBERS,
-  FUNCTIONS
+enum dances {
+  TD_I_NUMBERS = 0
 };
 
-#define ESC_MED LT(MEDIA, KC_ESC)
-#define SPC_NAV LT(NAVIGATION, KC_SPC)
-#define TAB_CUR LT(MOUSE, KC_TAB)
-#define ENT_SYM LT(SYMBOLS, KC_ENT)
-#define BSP_NUM LT(NUMBERS, KC_BSPC)
-#define DEL_FUN LT(FUNCTIONS, KC_DEL)
+// Tap Dance definitions
+tap_dance_action_t tap_dance_actions[] = {
+    [TD_I_NUMBERS] = ACTION_TAP_DANCE_LAYER_MOVE(KC_I, NUMBERS),
+};
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /*
@@ -56,7 +65,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
 
     [BASE] = LAYOUT_split_3x5_3(
-            KC_Q,           KC_W,         KC_E,         KC_R,         KC_T,              KC_Y,         KC_U,         KC_I,           KC_O,         KC_P,
+            KC_Q,           KC_W,         KC_E,         KC_R,         KC_T,              KC_Y,         KC_U,         TD(TD_I_NUMBERS),      KC_O,         KC_P,
             KC_A,   LALT_T(KC_S), LCTL_T(KC_D), LSFT_T(KC_F), LGUI_T(KC_G),              LGUI_T(KC_H), LSFT_T(KC_J), LCTL_T(KC_K),   LALT_T(KC_L), KC_SCLN,
             RALT_T(KC_Z),   KC_X,         KC_C,         KC_V,         KC_B,              KC_N,         KC_M,         KC_COMMA,       KC_DOT,       RALT_T(KC_SLASH),
                                           ESC_MED,      SPC_NAV,      TAB_CUR,           ENT_SYM,      BSP_NUM,      DEL_FUN
@@ -93,10 +102,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [NUMBERS] = LAYOUT_split_3x5_3(
-            KC_LBRC,        KC_7,         KC_8,         KC_9,         KC_GRAVE,          KC_NO,        KC_NO,        KC_NO,          KC_NO,        KC_NO,
+            KC_LBRC,        KC_7,         KC_8,         KC_9,         KC_GRAVE,          LGUI(KC_5),   LGUI(KC_1),   LGUI(KC_2),     LGUI(KC_3),   LGUI(KC_4),
             KC_RBRC,        KC_4,         KC_5,         KC_6,         KC_EQUAL,          KC_LGUI,      KC_LSFT,      KC_LCTL,        KC_LALT,      KC_NO,
-     LGUI(KC_GRAVE),       KC_1,         KC_2,         KC_3,         KC_BSLS,           KC_NO,        KC_NO,        KC_COMMA,       KC_DOT,       KC_RALT,
-                                          KC_DOT,       KC_0,         KC_MINUS,          KC_NO,        KC_NO,        KC_NO
+     LGUI(KC_GRAVE),        KC_1,         KC_2,         KC_3,         KC_BSLS,           KC_NO,        LCTL(KC_Q),   KC_COMMA,       KC_DOT,       KC_RALT,
+                                          KC_DOT,       KC_0,         KC_MINUS,          TO(BASE),     KC_NO,        KC_NO
     ),
 
     [FUNCTIONS] = LAYOUT_split_3x5_3(
