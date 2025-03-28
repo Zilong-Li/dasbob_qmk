@@ -21,6 +21,7 @@ enum combos {
   ER_UNDO,
   WE_COPY,
   UI_CTRS,
+  IO_NUMB,
 };
 
 const uint16_t PROGMEM er_combo[] = {KC_E, KC_R, COMBO_END};
@@ -33,16 +34,9 @@ combo_t key_combos[] = {
   [ER_UNDO] = COMBO(er_combo, LCTL(KC_Z)),
   [WE_COPY] = COMBO(we_combo, LCTL(KC_C)),
   [UI_CTRS] = COMBO(ui_combo, LCTL(KC_S)),
+  [IO_NUMB] = COMBO(io_combo, TO(NUMBERS)),
 };
 
-enum dances {
-  TD_I_NUMBERS = 0
-};
-
-// Tap Dance definitions
-tap_dance_action_t tap_dance_actions[] = {
-    [TD_I_NUMBERS] = ACTION_TAP_DANCE_LAYER_MOVE(KC_I, NUMBERS),
-};
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /*
@@ -65,7 +59,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
 
     [BASE] = LAYOUT_split_3x5_3(
-            KC_Q,           KC_W,         KC_E,         KC_R,         KC_T,              KC_Y,         KC_U,         TD(TD_I_NUMBERS),      KC_O,         KC_P,
+            KC_Q,           KC_W,         KC_E,         KC_R,         KC_T,              KC_Y,         KC_U,         KC_I,           KC_O,         KC_P,
             KC_A,   LALT_T(KC_S), LCTL_T(KC_D), LSFT_T(KC_F), LGUI_T(KC_G),              LGUI_T(KC_H), LSFT_T(KC_J), LCTL_T(KC_K),   LALT_T(KC_L), KC_SCLN,
             RALT_T(KC_Z),   KC_X,         KC_C,         KC_V,         KC_B,              KC_N,         KC_M,         KC_COMMA,       KC_DOT,       RALT_T(KC_SLASH),
                                           ESC_MED,      SPC_NAV,      TAB_CUR,           ENT_SYM,      BSP_NUM,      DEL_FUN
@@ -73,21 +67,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     // the following three layers are related to the left thumb
     [MEDIA] = LAYOUT_split_3x5_3(
-            KC_NO,          KC_NO,        KC_NO,        KC_NO,        KC_NO,             RGB_TOG,      RGB_MOD,      RGB_HUI,        RGB_SAI,      RGB_SPI,
+            KC_NO,          KC_NO,        KC_NO,        KC_NO,        KC_NO,             LSG(KC_LEFT), LSG(KC_DOWN), LSG(KC_UP),     LSG(KC_RIGHT),KC_NO,
             KC_NO,          KC_LALT,      KC_LCTL,      KC_LSFT,      KC_LGUI,           RGB_VAI,      KC_VOLD,      KC_VOLU,        KC_MPRV,      KC_MNXT,
             KC_RALT,        KC_NO,        KC_NO,        KC_NO,        KC_NO,             KC_NO,        KC_NO,        KC_BRID,        KC_BRIU,      KC_NO,
                                           KC_NO,        KC_NO,        KC_NO,             KC_MSTP,      KC_MPLY,      KC_MUTE
     ),
 
     [NAVIGATION] = LAYOUT_split_3x5_3(
-            KC_NO,          KC_NO,        KC_NO,        KC_NO,        KC_NO,             KC_AGIN,      KC_PSTE,      KC_COPY,        KC_CUT,       KC_UNDO,
+            KC_NO,          KC_NO,        KC_NO,        KC_NO,        KC_NO,             LSA(KC_LEFT), LSA(KC_DOWN), LSA(KC_UP),     LSA(KC_RIGHT),KC_UNDO,
             KC_NO,          KC_LALT,      KC_LCTL,      KC_LSFT,      KC_LGUI,           KC_LEFT,      KC_DOWN,      KC_UP,          KC_RIGHT,     KC_CAPS, 
             KC_RALT,        KC_NO,        KC_NO,        KC_NO,        KC_NO,             KC_HOME,      KC_PGDN,      KC_PGUP,        KC_END,       KC_INSERT,
                                           KC_NO,        KC_NO,        KC_NO,             KC_ENTER,     KC_BSPC,      KC_DELETE
     ),
 
     [MOUSE] = LAYOUT_split_3x5_3(
-            KC_NO,          KC_NO,        KC_NO,        KC_NO,        KC_NO,             LGUI(KC_S),   LGUI(KC_V),   LGUI(KC_C),     LGUI(KC_X),   LGUI(KC_Z),
+            KC_NO,          KC_NO,        KC_NO,        KC_NO,        KC_NO,             LGUI(KC_X),   LGUI(KC_V),   LGUI(KC_C),     LGUI(KC_Z),   LGUI(KC_S),
             KC_NO,          KC_LALT,      KC_LCTL,      KC_LSFT,      KC_LGUI,           KC_MS_L,      KC_MS_D,      KC_MS_U,        KC_MS_R,      KC_NO, 
             KC_RALT,        KC_NO,        KC_NO,        KC_NO,        KC_NO,             KC_WH_L,      KC_WH_D,      KC_WH_U,        KC_WH_R,      KC_NO,  
                                           KC_NO,        KC_NO,        KC_NO,             KC_BTN2,      KC_BTN1,      KC_BTN3
