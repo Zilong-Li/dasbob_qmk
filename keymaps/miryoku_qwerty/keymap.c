@@ -66,22 +66,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     // the following three layers are related to the left thumb
     [MEDIA] = LAYOUT_split_3x5_3(
-            KC_NO,          KC_NO,        KC_NO,        KC_NO,        KC_NO,             LSG(KC_LEFT), LSG(KC_DOWN), LSG(KC_UP),     LSG(KC_RIGHT),KC_NO,
+            KC_NO,          KC_NO,        KC_NO,        KC_NO,        KC_NO,             LSG(KC_LEFT), LSG(KC_DOWN), LSG(KC_UP),     LSG(KC_RIGHT),LGUI(KC_GRAVE),
             KC_NO,          KC_LALT,      KC_LCTL,      KC_LSFT,      KC_LGUI,           RGB_VAI,      KC_VOLD,      KC_VOLU,        KC_MPRV,      KC_MNXT,
             KC_RALT,        KC_NO,        KC_NO,        KC_NO,        KC_NO,             KC_NO,        KC_NO,        KC_BRID,        KC_BRIU,      KC_NO,
                                           KC_NO,        KC_NO,        KC_NO,             KC_MSTP,      KC_MPLY,      KC_MUTE
     ),
 
+    // TODO: all KC_NO on the first row can be used!
     [NAVIGATION] = LAYOUT_split_3x5_3(
-            KC_NO,          KC_NO,        KC_NO,        KC_NO,        KC_NO,             LSA(KC_LEFT), LSA(KC_DOWN), LSA(KC_UP),     LSA(KC_RIGHT),KC_UNDO,
+            LCTL(KC_X),   LCTL(KC_V),   LCTL(KC_C),     LCTL(KC_Z),   LCTL(KC_S),        LSA(KC_LEFT), LSA(KC_DOWN), LSA(KC_UP),     LSA(KC_RIGHT),KC_UNDO,
             KC_NO,          KC_LALT,      KC_LCTL,      KC_LSFT,      KC_LGUI,           KC_LEFT,      KC_DOWN,      KC_UP,          KC_RIGHT,     KC_CAPS, 
-            KC_RALT,        KC_NO,        KC_NO,        KC_NO,        KC_NO,             KC_HOME,      KC_PGDN,      KC_PGUP,        KC_END,       KC_INSERT,
+            KC_RALT,        KC_NO,        KC_NO,        KC_NO,        KC_NO,             KC_HOME,      KC_PGDN,      KC_PGUP,        KC_END,       KC_NO,
                                           KC_NO,        KC_NO,        KC_NO,             KC_ENTER,     KC_BSPC,      KC_DELETE
     ),
 
     [MOUSE] = LAYOUT_split_3x5_3(
-            KC_NO,          KC_NO,        KC_NO,        KC_NO,        KC_NO,             LGUI(KC_X),   LGUI(KC_V),   LGUI(KC_C),     LGUI(KC_Z),   LGUI(KC_S),
-            KC_NO,          KC_LALT,      KC_LCTL,      KC_LSFT,      KC_LGUI,           KC_MS_L,      KC_MS_D,      KC_MS_U,        KC_MS_R,      KC_NO, 
+            KC_NO,          KC_NO,        KC_NO,        KC_NO,        KC_NO,             LSFT(KC_EQL), KC_EQUAL,     KC_MINUS,   LSFT(KC_MINUS),   LSFT(KC_BSLS),
+            KC_NO,          KC_LALT,      KC_LCTL,      KC_LSFT,      KC_LGUI,           KC_MS_L,      KC_MS_D,      KC_MS_U,        KC_MS_R,      KC_BSLS, 
             KC_RALT,        KC_NO,        KC_NO,        KC_NO,        KC_NO,             KC_WH_L,      KC_WH_D,      KC_WH_U,        KC_WH_R,      KC_NO,  
                                           KC_NO,        KC_NO,        KC_NO,             KC_BTN2,      KC_BTN1,      KC_BTN3
     ),
