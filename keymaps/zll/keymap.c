@@ -31,8 +31,8 @@ const uint16_t PROGMEM er_combo[] = {KC_E, KC_R, COMBO_END};
 const uint16_t PROGMEM ui_combo[] = {KC_U, KC_I, COMBO_END};
 
 combo_t key_combos[] = {
-  [WE_KCQ] = COMBO(we_combo, KC_Q),
-  [IO_KCZ] = COMBO(io_combo, KC_Z),
+  [WE_KCQ] = COMBO(we_combo, KC_EQUAL),
+  [IO_KCZ] = COMBO(io_combo, KC_MINUS),
   [ER_DOL] = COMBO(er_combo, KC_DLR),
   [UI_PERC] = COMBO(ui_combo, KC_PERC),
 };
@@ -43,11 +43,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      *         ┌───┐                           ┌───┐
      *     ┌───┤ E ├───┬───┐           ┌───┬───┤ I ├───┐
      * ┌───┤ W ├───┤ R │ T │           │ X │ U ├───┤ O ├───┐
-     * │ = ├───┤ D ├───┼───┤           ├───┼───┤ K ├───┤ P │
+     * │ Q ├───┤ D ├───┼───┤           ├───┼───┤ K ├───┤ P │
      * ├───┤ S ├───┤ F │ G │           │ H │ J ├───┤ L ├───┤
      * │ A ├───┤ C ├───┼───┤           ├───┼───┤ , ├───┤ ; │
      * ├───┤ Y ├───┤ V │ B │           │ N │ M ├───┤ . ├───┤
-     * │ - ├───┘   └───┴───┘           └───┴───┘   └───┤ / │
+     * │ Z ├───┘   └───┴───┘           └───┴───┘   └───┤ / │
      * └───┘       ┌───┐                   ┌───┐       └───┘
      *             │ESC├───┐           ┌───┤DEL│
      *             └───┤SPC├───┐   ┌───┤BSP├───┘
@@ -59,9 +59,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
 
     [BASE] = LAYOUT_split_3x5_3(
-            KC_EQUAL,       KC_W,         KC_E,         KC_R,         KC_T,              KC_X,         KC_U,         KC_I,           KC_O,         KC_P,
-            KC_A,   LALT_T(KC_S), LCTL_T(KC_D), LSFT_T(KC_F), LGUI_T(KC_G),              LGUI_T(KC_H), LSFT_T(KC_J), LCTL_T(KC_K),   LALT_T(KC_L), KC_SCLN,
-            KC_MINUS,       KC_Y,         KC_C,         KC_V,         KC_B,              KC_N,         KC_M,         KC_COMMA,       KC_DOT,       RALT_T(KC_SLASH),
+            KC_Q,       KC_W,         KC_E,         KC_R,         KC_T,              KC_Y,         KC_U,         KC_I,           KC_O,         KC_P,
+            KC_A,   LALT_T(KC_S), LCTL_T(KC_D), LSFT_T(KC_F), LGUI_T(KC_G),          LGUI_T(KC_H), LSFT_T(KC_J), LCTL_T(KC_K),   LALT_T(KC_L), KC_SCLN,
+            KC_Z,       KC_X,         KC_C,         KC_V,         KC_B,              KC_N,         KC_M,         KC_COMMA,       KC_DOT,       RALT_T(KC_SLASH),
                                           ESC_MED,      SPC_NAV,      TAB_CUR,           ENT_SYM,      BSP_NUM,      DEL_FUN
     ),
 
