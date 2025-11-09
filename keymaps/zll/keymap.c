@@ -18,11 +18,10 @@ enum dasbob_layers {
 #define DEL_FUN LT(FUNCTIONS, KC_DEL)
 
 enum combos {
-  /* ER_UNDO, */
   WE_KCQ,
-  IO_KCZ,
   ER_DOL,
-  UI_PERC,
+  UI_QUOTE,
+  IO_QUOTE,
 };
 
 const uint16_t PROGMEM we_combo[] = {KC_W, KC_E, COMBO_END};
@@ -32,9 +31,9 @@ const uint16_t PROGMEM ui_combo[] = {KC_U, KC_I, COMBO_END};
 
 combo_t key_combos[] = {
   [WE_KCQ] = COMBO(we_combo, KC_EQUAL),
-  [IO_KCZ] = COMBO(io_combo, KC_MINUS),
   [ER_DOL] = COMBO(er_combo, KC_DLR),
-  [UI_PERC] = COMBO(ui_combo, KC_PERC),
+  [UI_QUOTE] = COMBO(ui_combo, KC_QUOTE),
+  [IO_QUOTE] = COMBO(io_combo, LSFT(KC_QUOTE)),
 };
 
 
