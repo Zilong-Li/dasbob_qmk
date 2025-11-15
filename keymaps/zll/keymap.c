@@ -22,23 +22,26 @@ enum combos {
   ER_DOL,
   UI_QUOTE,
   IO_QUOTE,
+  OP_MINUS,
 };
 
 const uint16_t PROGMEM we_combo[] = {KC_W, KC_E, COMBO_END};
 const uint16_t PROGMEM io_combo[] = {KC_I, KC_O, COMBO_END};
 const uint16_t PROGMEM er_combo[] = {KC_E, KC_R, COMBO_END};
 const uint16_t PROGMEM ui_combo[] = {KC_U, KC_I, COMBO_END};
+const uint16_t PROGMEM op_combo[] = {KC_O, KC_P, COMBO_END};
 
 combo_t key_combos[] = {
   [WE_KCQ] = COMBO(we_combo, KC_EQUAL),
   [ER_DOL] = COMBO(er_combo, KC_DLR),
   [UI_QUOTE] = COMBO(ui_combo, KC_QUOTE),
   [IO_QUOTE] = COMBO(io_combo, LSFT(KC_QUOTE)),
+  [OP_QUOTE] = COMBO(op_combo, LSFT(KC_MINUS)),
 };
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    /*
+    /* 
      *         ┌───┐                           ┌───┐
      *     ┌───┤ E ├───┬───┐           ┌───┬───┤ I ├───┐
      * ┌───┤ W ├───┤ R │ T │           │ X │ U ├───┤ O ├───┐
@@ -88,7 +91,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     // and the following three are from the right thumb
     [SYMBOLS] = LAYOUT_split_3x5_3(
-            LSFT(KC_QUOTE), LSFT(KC_7),   LSFT(KC_8),   KC_LCBR,      KC_RCBR,           LSFT(KC_COMMA), LSFT(KC_DOT), KC_NO,        KC_NO,        KC_NO,
+            LSFT(KC_QUOTE), LSFT(KC_7),   LSFT(KC_8),   KC_LCBR,      KC_RCBR,           LSFT(KC_COMMA), LSFT(KC_DOT), LSFT(KC_MINUS), KC_MINUS,   LSFT(KC_EQL),
             KC_QUOTE,       LSFT(KC_4),   LSFT(KC_5),   LSFT(KC_6),   KC_GRAVE,          KC_DEL,       KC_BSPC,      KC_LCTL,        KC_LALT,      KC_SCLN,
             LSFT(KC_GRAVE), LSFT(KC_1),   LSFT(KC_2),   LSFT(KC_3),   LSFT(KC_BSLS),     KC_LBRC,      KC_RBRC,      KC_COMMA,       KC_DOT,       KC_SLASH,
                                           LSFT(KC_9),   LSFT(KC_0),   KC_BSLS,           KC_NO,        KC_NO,        KC_NO
