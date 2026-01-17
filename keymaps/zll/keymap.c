@@ -17,27 +17,6 @@ enum dasbob_layers {
 #define BSP_NUM LT(NUMBERS, KC_BSPC)
 #define DEL_FUN LT(FUNCTIONS, KC_DEL)
 
-/* enum combos { */
-/*   WE_KCQ, */
-/*   ER_DOL, */
-/*   UI_QUOTE, */
-/*   IO_QUOTE, */
-/*   OP_MINUS, */
-/* }; */
-
-/* const uint16_t PROGMEM we_combo[] = {KC_W, KC_E, COMBO_END}; */
-/* const uint16_t PROGMEM io_combo[] = {KC_I, KC_O, COMBO_END}; */
-/* const uint16_t PROGMEM er_combo[] = {KC_E, KC_R, COMBO_END}; */
-/* const uint16_t PROGMEM ui_combo[] = {KC_U, KC_I, COMBO_END}; */
-/* const uint16_t PROGMEM op_combo[] = {KC_O, KC_P, COMBO_END}; */
-
-/* combo_t key_combos[] = { */
-/*   [WE_KCQ] = COMBO(we_combo, KC_EQUAL), */
-/*   [ER_DOL] = COMBO(er_combo, KC_DLR), */
-/*   [UI_QUOTE] = COMBO(ui_combo, KC_QUOTE), */
-/*   [IO_QUOTE] = COMBO(io_combo, LSFT(KC_QUOTE)), */
-/*   [OP_QUOTE] = COMBO(op_combo, LSFT(KC_MINUS)), */
-/* }; */
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -70,7 +49,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* the following three layers are related to the left thumb */
     [MEDIA] = LAYOUT_split_3x5_3(
             LCTL(KC_X),   LCTL(KC_V),   LCTL(KC_C),     LCTL(KC_Z),   LCTL(KC_W),        LSG(KC_LEFT), LSG(KC_DOWN), LSG(KC_UP),     LSG(KC_RIGHT),LGUI(KC_GRAVE),
-            KC_NO,          KC_LALT,      KC_LCTL,      KC_LSFT,      KC_LGUI,           RGB_VAI,      KC_VOLD,      KC_VOLU,        KC_MPRV,      KC_MNXT,
+            KC_NO,          KC_LALT,      KC_LCTL,      KC_LSFT,      KC_LGUI,           KC_NO,        KC_VOLD,      KC_VOLU,        KC_MPRV,      KC_MNXT,
             KC_RALT,        KC_NO,        KC_NO,        KC_NO,        KC_NO,             KC_NO,        KC_NO,        KC_BRID,        KC_BRIU,      KC_NO,
                                           KC_NO,        KC_NO,        KC_NO,             KC_MSTP,      KC_MPLY,      KC_MUTE
     ),
@@ -83,10 +62,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [MOUSE] = LAYOUT_split_3x5_3(
-            LCTL(KC_Q),     KC_NO,        KC_NO,        KC_NO,        KC_NO,             LSFT(KC_EQL), KC_EQUAL,     KC_MINUS,   LSFT(KC_MINUS),   LSFT(KC_BSLS),
-            KC_NO,          KC_LALT,      KC_LCTL,      KC_LSFT,      KC_LGUI,           KC_MS_L,      KC_MS_D,      KC_MS_U,        KC_MS_R,      KC_BSLS, 
-            KC_RALT,        KC_NO,        KC_NO,        KC_NO,        KC_NO,             KC_WH_L,      KC_WH_D,      KC_WH_U,        KC_WH_R,      KC_BSPC,  
-                                          KC_NO,        KC_NO,        KC_NO,             KC_BTN2,      KC_BTN1,      KC_BTN3
+            LCTL(KC_Q),     KC_NO,        KC_NO,        KC_NO,        KC_NO,             KC_LEFT,      KC_DOWN,      KC_UP,         KC_RIGHT,     MS_ACL2, 
+            KC_NO,          KC_NO,        KC_NO,        KC_NO,        QK_REP,            MS_LEFT,      MS_DOWN,      MS_UP,         MS_RGHT,      MS_ACL0, 
+            KC_NO,          KC_NO,        KC_NO,        KC_NO,        QK_AREP,           MS_WHLL,      MS_WHLD,      MS_WHLU,       MS_WHLR,      MS_ACL1,  
+                                          KC_NO,        KC_NO,        KC_NO,             MS_BTN2,      MS_BTN1,      MS_BTN3
     ),
 
     // and the following three are from the right thumb KC_RCBR  KC_BSLS 
