@@ -49,22 +49,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* the following three layers are related to the left thumb */
     [MEDIA] = LAYOUT_split_3x5_3(
             LCTL(KC_X),   LCTL(KC_V),   LCTL(KC_C),     LCTL(KC_Z),   LCTL(KC_W),        LSG(KC_LEFT), LSG(KC_DOWN), LSG(KC_UP),     LSG(KC_RIGHT),LGUI(KC_GRAVE),
-            KC_NO,          KC_LALT,      KC_LCTL,      KC_LSFT,      KC_LGUI,           KC_NO,        KC_VOLD,      KC_VOLU,        KC_MPRV,      KC_MNXT,
-            KC_RALT,        KC_NO,        KC_NO,        KC_NO,        KC_NO,             KC_NO,        KC_NO,        KC_BRID,        KC_BRIU,      KC_NO,
+            LCTL(KC_S),     KC_LALT,      KC_LCTL,      KC_LSFT,      KC_LGUI,           KC_NO,        KC_VOLD,      KC_VOLU,        KC_MPRV,      KC_MNXT,
+            KC_NO,          KC_NO,        KC_NO,        KC_NO,        KC_NO,             KC_NO,        KC_NO,        KC_BRID,        KC_BRIU,      KC_NO,
                                           KC_NO,        KC_NO,        KC_NO,             KC_MSTP,      KC_MPLY,      KC_MUTE
     ),
 
     [NAVIGATION] = LAYOUT_split_3x5_3(
             LGUI(KC_X),   LGUI(KC_V),   LGUI(KC_C),     LGUI(KC_Z),   LGUI(KC_W),        LSA(KC_LEFT), LSA(KC_DOWN), LSA(KC_UP),     LSA(KC_RIGHT),KC_UNDO,
-            LCTL(KC_A),     KC_LALT,      KC_LCTL,      KC_LSFT,      KC_LGUI,           KC_LEFT,      KC_DOWN,      KC_UP,          KC_RIGHT,     KC_CAPS, 
-            KC_RALT,        KC_NO,        KC_NO,        QK_AREP,      QK_REP,            KC_HOME,      KC_PGDN,      KC_PGUP,        KC_END,       KC_NO,
+            LGUI(KC_S),     KC_LALT,      KC_LCTL,      KC_LSFT,      KC_LGUI,           KC_LEFT,      KC_DOWN,      KC_UP,          KC_RIGHT,     KC_CAPS, 
+            KC_NO,          KC_NO,        KC_NO,        QK_AREP,      QK_REP,            KC_HOME,      KC_PGDN,      KC_PGUP,        KC_END,       KC_NO,
                                           KC_NO,        KC_NO,        KC_NO,             KC_ENTER,     KC_BSPC,      KC_DELETE
     ),
 
     [MOUSE] = LAYOUT_split_3x5_3(
-            LCTL(KC_Q),     KC_NO,        KC_NO,        KC_NO,        KC_NO,             KC_LEFT,      KC_DOWN,      KC_UP,         KC_RIGHT,     MS_ACL2, 
-            KC_NO,          KC_NO,        KC_NO,        KC_NO,        KC_NO,             MS_LEFT,      MS_DOWN,      MS_UP,         MS_RGHT,      MS_ACL0, 
-            KC_NO,          KC_NO,        KC_NO,        QK_AREP,      QK_REP,            MS_WHLL,      MS_WHLD,      MS_WHLU,       MS_WHLR,      MS_ACL1,  
+            LCTL(KC_Q),    LCTL(KC_A),   LCTL(KC_E),    KC_NO,        KC_NO,             KC_LEFT,      KC_DOWN,      KC_UP,         KC_RIGHT,     MS_ACL2, 
+            KC_NO,          KC_LALT,      KC_LCTL,      KC_LSFT,      KC_LGUI,           MS_LEFT,      MS_DOWN,      MS_UP,         MS_RGHT,      MS_ACL0, 
+            KC_NO,          KC_NO,        KC_NO,        QK_AREP,      QK_REP,            MS_WHLL,      MS_WHLU,      MS_WHLD,       MS_WHLR,      MS_ACL1,  
                                           KC_NO,        KC_NO,        KC_NO,             MS_BTN2,      MS_BTN1,      MS_BTN3
     ),
 
@@ -77,10 +77,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [NUMBERS] = LAYOUT_split_3x5_3(
-            KC_LBRC,        KC_7,         KC_8,         KC_9,         KC_EQUAL,          LGUI(KC_5),   LGUI(KC_1),   LGUI(KC_2),     LGUI(KC_3),   LGUI(KC_4),
+            KC_LBRC,        KC_7,         KC_8,         KC_9,         KC_MINUS,          LGUI(KC_5),   LGUI(KC_1),   LGUI(KC_2),     LGUI(KC_3),   LGUI(KC_4),
             KC_RBRC,        KC_4,         KC_5,         KC_6,         LSFT(KC_EQL),      KC_LGUI,      KC_LSFT,      KC_LCTL,        KC_LALT,      KC_RBRC,
      LGUI(KC_GRAVE),        KC_1,         KC_2,         KC_3,         LSFT(KC_MINUS),    LSFT(KC_COMMA), LSFT(KC_DOT), KC_COMMA,     KC_DOT,       KC_SLASH,
-                                          KC_DOT,       KC_0,         KC_MINUS,          KC_NO,        KC_NO,        KC_NO
+                                          KC_DOT,       KC_0,         KC_EQUAL,          KC_NO,        KC_NO,        KC_NO
     ),
     
     [FUNCTIONS] = LAYOUT_split_3x5_3(
