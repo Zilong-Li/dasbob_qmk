@@ -68,19 +68,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                           KC_NO,        KC_NO,        KC_NO,             MS_BTN2,      MS_BTN1,      MS_BTN3
     ),
 
-    // and the following three are from the right thumb
+    // and the following three are from the right thumb 
     [SYMBOLS] = LAYOUT_split_3x5_3(
             LSFT(KC_QUOTE), LSFT(KC_7),   LSFT(KC_8),   KC_LCBR,      KC_RCBR,           KC_NO,        KC_NO,        KC_NO,          KC_NO,        KC_NO,
-            KC_QUOTE,       LSFT(KC_4),   LSFT(KC_5),   LSFT(KC_6),   KC_GRAVE,          KC_LGUI,      KC_LSFT,      KC_LCTL,        KC_LALT,      KC_RBRC,
-            LSFT(KC_GRAVE), LSFT(KC_1),   LSFT(KC_2),   LSFT(KC_3),   LSFT(KC_BSLS),     LSFT(KC_COMMA), LSFT(KC_DOT), KC_COMMA,     KC_DOT,       KC_SLASH,
-                                          LSFT(KC_9),   LSFT(KC_0),   KC_BSLS,           KC_NO,        KC_NO,        KC_NO
+            KC_QUOTE,       LSFT(KC_4),   LSFT(KC_5),   LSFT(KC_6),   LSFT(KC_EQUAL),    KC_LGUI,      KC_LSFT,      KC_LCTL,        KC_LALT,      KC_GRAVE,
+            LSFT(KC_GRAVE), LSFT(KC_1),   LSFT(KC_2),   LSFT(KC_3),   LSFT(KC_MINUS),    KC_NO,        KC_NO,        LSFT(KC_COMMA), LSFT(KC_DOT), KC_RALT,
+                                          LSFT(KC_9),   LSFT(KC_0),   LSFT(KC_BSLS),     KC_NO,        KC_NO,        KC_NO
     ),
 
+    // use shift to activate the symbols 
     [NUMBERS] = LAYOUT_split_3x5_3(
-            KC_LBRC,        KC_7,         KC_8,         KC_9,         KC_MINUS,          LGUI(KC_5),   LGUI(KC_1),   LGUI(KC_2),     LGUI(KC_3),   LGUI(KC_4),
-            KC_RBRC,        KC_4,         KC_5,         KC_6,         LSFT(KC_EQL),      KC_LGUI,      KC_LSFT,      KC_LCTL,        KC_LALT,      KC_RBRC,
-     LGUI(KC_GRAVE),        KC_1,         KC_2,         KC_3,         LSFT(KC_MINUS),    LSFT(KC_COMMA), LSFT(KC_DOT), KC_COMMA,     KC_DOT,       KC_SLASH,
-                                          KC_DOT,       KC_0,         KC_EQUAL,          KC_NO,        KC_NO,        KC_NO
+            KC_LBRC,        KC_7,         KC_8,         KC_9,         KC_GRAVE,          LGUI(KC_5),   LGUI(KC_1),   LGUI(KC_2),     LGUI(KC_3),   LGUI(KC_4),
+            KC_RBRC,        KC_4,         KC_5,         KC_6,         KC_EQUAL,          KC_LGUI,      KC_LSFT,      KC_LCTL,        KC_LALT,      KC_RBRC,
+     LGUI(KC_GRAVE),        KC_1,         KC_2,         KC_3,         KC_MINUS,          KC_NO,        KC_NO,        KC_COMMA,       KC_DOT,       KC_RALT,
+                                          KC_DOT,       KC_0,         KC_BSLS,           KC_NO,        KC_NO,        KC_NO
     ),
     
     [FUNCTIONS] = LAYOUT_split_3x5_3(
